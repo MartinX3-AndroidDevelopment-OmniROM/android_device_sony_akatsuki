@@ -12,8 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_akatsuki.mk
+# Inherit device parts
+$(call inherit-product, device/sony/akatsuki/aosp_h8416.mk)
 
-COMMON_LUNCH_CHOICES += \
-    omni_akatsuki-eng \
-    omni_akatsuki-userdebug
+# Override Product Name
+PRODUCT_NAME := omni_akatsuki
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := akatsuki
